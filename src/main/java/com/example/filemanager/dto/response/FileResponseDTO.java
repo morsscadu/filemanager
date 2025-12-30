@@ -1,4 +1,4 @@
-package com.example.filemanager.dto;
+package com.example.filemanager.dto.response;
 
 import java.time.LocalDateTime;
 

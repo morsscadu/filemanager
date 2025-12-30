@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.example.filemanager.dto.FileResponseDTO;
+import com.example.filemanager.dto.response.FileResponseDTO;
 import com.example.filemanager.exception.FileNotFoundException;
 import com.example.filemanager.model.StoredFile;
 import com.example.filemanager.repository.StoredFileRepository;

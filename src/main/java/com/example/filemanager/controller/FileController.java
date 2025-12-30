@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.example.filemanager.dto.FileResponseDTO;
+import com.example.filemanager.dto.response.FileResponseDTO;
 import com.example.filemanager.model.StoredFile;
 import com.example.filemanager.service.FileStorageService;
 
