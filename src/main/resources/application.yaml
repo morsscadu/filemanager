@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: filemanager
+  datasource:
+    url: jdbc:postgresql://localhost:5432/files
+    username: fileuser
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
