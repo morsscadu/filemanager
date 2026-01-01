@@ -12,6 +12,8 @@ import javax.crypto.SecretKey;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.example.filemanager.model.User;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -55,7 +57,11 @@ public class JwtService {
     }
 
     public String generateToken(UserDetails userDetails) {
-        return buildToken(new HashMap<>(), userDetails, 1000 * 60 * 60);
+        var claims = new HashMap<>();
+        var user = (User) userDetails;
+        claims.put("role", user.getRole().name());
+        
+        return buildToken(new HashMap<>(), userDetails, 1000 * 60 * 60); // 1 hora
     }
 
     private String buildToken(

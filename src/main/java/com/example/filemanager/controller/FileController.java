@@ -44,16 +44,23 @@ public class FileController {
     }
 
     @GetMapping("/")
+    public ResponseEntity<List<FileResponseDTO>> listMyFiles() {
+        return ResponseEntity.ok(service.listMyFiles());
+    }
+
+    // Endpoints apenas para role ADMIN
+
+    @GetMapping("/admin/")
     public ResponseEntity<List<FileResponseDTO>> listFiles() {
         return ResponseEntity.ok(service.listAll());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/admin/{id}")
     public ResponseEntity<FileResponseDTO> getFileById(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public ResponseEntity<Void> deleteFile(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
